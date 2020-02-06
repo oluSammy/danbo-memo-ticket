@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Danbo International School</title>
+    <link rel="shortcut icon" href="./img/admin_logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fontawesome.css"> -->
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,500,700,800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header_content clearfix">
+            <div class="header_logo-box float">
+                <img class="header_logo" src="./img/admin_logo.png" alt="Danbo Logo">    
+            </div>
+            <div class="header_logout float">
+                <button class="btn btn-logout">
+                    LogOut
+                </button>
+            </div>
+        </div>
+    </header>
+    <div>
+        
+    </div>
+    <div class="wrapper">   
+        <!-- SIGN IN BOX FOR USERS STARTS-->
+        <div class="container sign-in">
+            <div class="sign-in-box">
+                <h3 class="sign-in-text">Sign In</h3>
+                <form action="" method="POST" class="sign-in-form">
+                    <div class="margin-auto">
+                        <input type="text" name="email" class="sign-in-email block sign-in-input" placeholder="EMAIL">
+                        <input type="password" name="password" class="sign-in-pass block sign-in-input" placeholder="PASSWORD">  
+                    </div>
+                    <p class="error-text"></p>
+                    <div class="form-action">
+                        <button class="btn sign-in-btn"> Sign In <i class="fas fa-sign-in-alt"></i></button>
+                        <a href="#" class="forgot-password">Forgot Password</a>
+                    </div>
+                </form>
+                <p class="danbo-text">Danbo International Schools ICT</p>
+            </div>
+        </div>
+        <!-- SIGN IN BOX FOR USERS ENDS-->
+        
+        <!-- SIDE BAR AND MAIN BOWL FOR ADMIN STARTS-->
+        <!-- <section class="sign-up-users body clearfix">
+            <div class="sidebar float">
+                <button class="sidebar-btn reg-users">Register User</button>
+                <button class="sidebar-btn search-memo">Search Memos</button>
+                <button class="sidebar-btn today-memo">Today's Memo</button>
+                <div class="current-admin">
+                    <p>sammy@gmail.com</p>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <div class="main-bowl float">
+                <h5 class="main-bowl-header">Sign Up Users</h5>
+                <form action="#" class="sign-up-users">
+                    <div class="input-set">
+                        <label class="labels" for="first-name"> First Name:</label>
+                        <input class="signup-first-name signup-input" type="text" name="first-name" id="first-name">
+
+                        <label class="labels" for="last-name"> Last Name:</label>
+                        <input class="signup-last-name signup-input" type="text" name="last-name" id="last-name">
+                    </div>
+                    <div class="input-set">
+                        <label class="labels" for="signup-email">Email:</label>
+                        <input class="signup-email signup-input" type="email" name="signup-email" id="signup-email">
+        
+                        <label class="labels" for="signup-pass">Password:</label>
+                        <input class="signup-pass signup-input" type="password" name="signup-pass" id="signup-pass">
+
+                        <div class="confirm-password">
+                            <label class="labels signup-pass-confirm-label" for="signup-pass-confirm">Confirm Password:</label>
+                            <input class="signup-pass-confirm signup-input" type="password" name="signup-pass-confirm" id="signup-password">
+                        </div>
+                    </div>
+                    <div class="">
+                        <label class="labels" for="signup-dept">Select Department:</label>
+                        <select class="signup-input signup-dept">
+                            <option value=""></option>
+                            <option value="ict">ICT Department</option>
+                            <option value="">Primary</option>
+                            <option value="mercedes">Secondary</option>
+                            <option value="audi">Nursery</option>
+                        </select>
+
+                        <label class="labels" for="signup-dept">Select Position:</label>
+                        <select class="signup-input signup-position">
+                            <option value=""></option>
+                            <option value="">H O D</option>
+                            <option value="saab">Teacher</option>
+                            <option value="mercedes">Officer</option>
+                            <option value="audi">Secretary</option>
+                            <option value="saab">Teacher</option>
+                            <option value="mercedes">Officer</option>
+                            <option value="audi">Secretary</option>
+                        </select>
+                    </div>
+                    <div class="">
+                        <p class="signup-error-text">Passwords dont match</p>
+                        <button class="btn signup-btn" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </section> -->
+        <!-- SIDE BAR AND MAIN BOWL FOR ADMIN ENDS-->
+
+        <!-- RECEIVED MEMOS AND SENT MEMOS TABLE -->
+        <!-- <section class="users-dashboard body clearfix">
+            <div class="sidebar float">
+                <button class="sidebar-btn create-memo">Create Memo</button>
+                <button class="sidebar-btn Recieved-memo">Recieved Memos</button>
+                <button class="sidebar-btn sent-memo">Sent Memos</button>
+                <div class="current-user">
+                    <p class="user-mail">sammy@gmail.com</p>
+                    <p class="user-dept">ICT Department</p>
+                    <p class="user-position">Head of department</p>
+                </div>
+            </div>
+            <div class="main-bowl float">   
+                <div class="main-bowl-header">Recieved Memos</div>      
+                 <table class="table">
+                    <thead class="table-head">
+                        <tr class="table-row">
+                            <th>Date Recieved</th>
+                            <th>Subject</th>
+                            <th>Sender</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>End of the year party</td>
+                            <td>Olaoye Jacons and 13 others</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>Ancient documents have been found in this sch...</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>Please lay that picture beside the other one.</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>Can you please give me a written statement?</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>What happened to the side of your car?</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>Salt and pepper are common spices in Canada...</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>There are not enough words in this sentence...</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>That dog was following me around all day....</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>My mom will give me a birthday present....</td>
+                            <td>Olaoye Jacons</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                        <tr class="table-row">
+                            <td>12-01-2019</td>
+                            <td>End of the year party fo djsskddddj</td>
+                            <td>Olaoye Jacons and 6 others</td>
+                            <td><a href="">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="btn btn-prev" type="submit"><i class="fas fa-arrow-circle-left"></i> Previous </button>
+                    <button class="btn btn-next" type="submit">Next <i class="fas fa-arrow-circle-right"></i></button>
+                </div>
+                <div class="memo-spinner">
+                    <i class="fas fa-spinner"></i>
+                    <p class="spinner-text">Loading...</p>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- SELECT MEMO RECEIVERS -->
+        <!-- <section class="users-dashboard body clearfix">
+            <div class="sidebar float">
+                <button class="sidebar-btn create-memo sidebar-active">Create Memo</button>
+                <button class="sidebar-btn Recieved-memo">Recieved Memos</button>
+                <button class="sidebar-btn sent-memo">Sent Memos</button>
+                <div class="current-user">
+                    <p class="user-mail">sammy@gmail.com</p>
+                    <p class="user-dept">ICT Department</p>
+                    <p class="user-position">Head of department</p>
+                </div>
+            </div>
+            <div class="main-bowl float">   
+                <div class="main-bowl-header">Send Memo To..</div>    
+
+                <input type="checkbox" name="all" id="send-all">
+                <label class="memo-all" for="all">Send To All</label>
+
+                <div class="memo-recievers-wrapper clearfix">
+                    <div class="memo-dept float">
+                        <h5 class="memo-reciever-header">Departments</h5>
+                        <li><a href="" class="active-dept">ICT</a></li>
+                        <li><a href="">Primary</a></li>
+                        <li><a href="">Secondary</a></li>
+                        <li><a href="">Nursery</a></li>
+                        <li><a href="">ICT</a></li>
+                    </div>
+                    <div class="memo-recievers float">
+                        <h5 class="memo-reciever-header"> ICT Officers</h5>
+                        <form action="#" class="memo-recievers-list">
+                            <div class="">
+                                <input type="checkbox" name="Drake" id="Drake">
+                                <label class="memo-reciever-label" for="Drake"> Drake</label>
+                            </div>
+                            <div class="">
+                                <input type="checkbox" name="Future" id="future">
+                                <label class="memo-reciever-label" for="Drake"> Future</label>
+                            </div>
+                            <div class="">
+                                <input type="checkbox" name="Kendrik Lamar" id="kl">
+                                <label class="memo-reciever-label" for="Drake"> Kendrik Lamar</label>
+                            </div>
+                            <div class="">
+                                <input type="checkbox" name="J Cole" id="jc">
+                                <label class="memo-reciever-label" for="Drake"> J Cole</label>
+                            </div>
+                            <div class="">
+                                <input type="checkbox" name="Lil Wayne" id="lw">
+                                <label class="memo-reciever-label" for="Drake">Lil Wayne</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="cont-can">
+                    <button class="btn btn-cancel-1" type="submit">Cancel</button>
+                    <button class="btn" type="submit">Continue</button>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- CREATE MEMO -->
+        <!-- <section class="users-dashboard body clearfix">
+            <div class="sidebar float">
+                <button class="sidebar-btn create-memo sidebar-active">Create Memo</button>
+                <button class="sidebar-btn Recieved-memo">Recieved Memos</button>
+                <button class="sidebar-btn sent-memo">Sent Memos</button>
+                <div class="current-user">
+                    <p class="user-mail">sammy@gmail.com</p>
+                    <p class="user-dept">ICT Department</p>
+                    <p class="user-position">Head of department</p>
+                </div>
+            </div>
+            <div class="main-bowl float">   
+                <div class="main-bowl-header">Create Memo...</div>
+                <div class="memo-top clearfix">
+                    <div class="memo-top-from float">
+                        <div class="memo-from clearfix">
+                            <div class="from float">FROM:</div>
+                            <div class="sender-info float">
+                                <p class="sender-name memo-top-info">Olumorin Samuel</p>
+                                <p class="designation memo-top-info">Executive Director</p>
+                                <p class="sender-mail memo-top-info">olumorinsammy@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memo-top-to float">
+                        <div class="clearfix">
+                            <div class="from float">TO:</div>
+                            <div class="sender-info float">
+                                <p class="sender-name memo-top-info">Olumorin Samuel;</p>
+                                <p class="designation memo-top-info">Ajaya Isreal;</p>
+                                <p class="sender-mail memo-top-info">Umar umar;</p>
+                                <p class="memo-others">and 15 others <a href="">View all</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="memo-subject">
+                    <div class="clearfix">
+
+                        <div class="float">
+                            <label for="memo-subject-text" class="memo-subject-label from">SUBJECT:</label>
+                            <input class="memo-subject-input" type="text" name="memo-subject-text" id="">
+                        </div>
+                        <div class="memo-date float">
+                            <div class="date-label from">17-January-2020</div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="memo-content clearfix">
+                    <div class="memo-content-text from float">CONTENT:</div>
+                    <div class="paragraphs float">
+                        <textarea class="paragraph block" name="paragraph" id="paragraph-1" cols="70" rows="10" placeholder="paragraph 1"></textarea>
+                    </div>
+                </div>            
+                <a class="add-para" href=""><span><i class="fas fa-plus-square"></i></span>Add Paragraph</a>
+                <div class="cont-can">
+                    <button class="btn btn-cancel-2" type="submit">Cancel</button>
+                    <button class="btn btn-create" type="submit">Create Memo</button>
+                </div>
+                <div class="memo-spinner">
+                    <i class="fas fa-spinner"></i>
+                    <p class="spinner-text">Sending...</p>
+                </div>
+            </div>
+        </section> -->
+        <!-- RECEIVERS POPUP -->
+        <!-- <div class="popup">
+            <div class="modal modal-reciever">
+                <h3 class="memo-reciever-modal">Memo Recievers</h3>
+                <div class="memo-box clearfix">
+                    
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                    <p class="memo-reciever-name float">Olumorin Samuel</p>
+                </div>
+                <div class="cont-can ">
+                    <button class="btn btn-modal-back" type="submit">Back</button>
+                    <button class="btn btn-modal-proceed" type="submit">Proceed</button>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- SUCCESS POPUP -->
+        <!-- <div class="popup">
+            <div class="modal modal-succes">
+                <a href="#" class="modal-succes-close">&times;</a>
+                <h3 class="memo-reciever-modal">Memo Sent</h3>
+                <div class="memo-box clearfix">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="cont-can ">
+                    <button class="btn btn-close" type="submit">ok</button>
+                </div>
+            </div>
+        </div> -->
+        <!-- PASSWORD RESET -->
+        <!-- <div class="popup">
+            <div class="modal modal-forgot-password">
+                <a href="#" class="modal-succes-close forgot-close">&times;</a>
+                <h3 class="memo-reciever-modal">Forgot Password</h3>
+                <div class="memo-box clearfix">
+                    <input type="email" name="reset" id="reset-password" class="reset-password" placeholder="email">
+                </div>
+                <div class="cont-can ">
+                    <button class="btn btn-close" type="submit">Reset Password</button>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- ERROR POPUP -->
+        <!-- <div class="popup">
+            <div class="modal modal-error">
+                <a href="#" class="modal-succes-close">&times;</a>
+                <h3 class="memo-reciever-modal">Memo not sent</h3>
+                <div class="memo-box clearfix">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="cont-can ">
+                    <button class="btn btn-close" type="submit">ok</button>
+                </div>
+            </div>
+        </div> -->
+        <!--  -->
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-functions.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+</body>
+</html>

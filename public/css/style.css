@@ -1,0 +1,472 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.header {
+  margin: 2rem 2rem 2rem 2rem;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  border: 1px solid #808080;
+  box-shadow: 19px 8px 40px -25px rgba(13,1,13,0.82);
+  border-radius: 1rem;
+}
+.header_logo-box{
+  margin-right: 70%;
+}
+.header_logo {
+  height: 6rem;
+  /* margin-right: 90%; */
+}
+h1 {
+  color: #55c57a;
+  text-transform: uppercase;
+  font-size: 5rem;
+}
+
+.test {
+  color: #7ed56f;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  margin-right: 10px;
+  padding: 10px;
+}
+.btn{
+  padding: 1rem 2.5rem;
+  background-color: #55c57a;
+  border-radius: 2rem;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  box-shadow: 3px 4px 23px -1px rgba(112,98,112,0.85);
+}
+.btn:hover{
+  background-color: #ff8080;
+  transform: scale(1.1);
+}
+.btn:active{
+  border: none;
+  outline: none;
+}
+.btn-logout{
+  visibility: hidden;
+  opacity: 0;
+}
+.body{
+  margin: 8rem 5rem 4rem 5rem;
+  border: 1px solid #4d4d4d;
+  border-radius: 3rem;
+  padding: 4rem 4rem;
+  box-shadow: 16px 13px 37px -1px rgba(0,0,0,0.48);
+}
+
+.sign-in-box{
+  display: inline-block;
+  padding-bottom: 3rem;
+  /* padding: 3rem; */
+  /* border: 2px solid rgb(89, 112, 190); */
+  margin-top: 9rem;
+  border-radius: 2rem;
+  width: 30%;
+  box-shadow: 16px 13px 37px -1px rgba(0,0,0,0.48);
+}
+.sign-in-text{
+  font-size: 4rem;
+  font-family: Alegreya, sans-serif;
+}
+.sign-in-input{
+  margin: 1rem 0 2rem 0;
+  padding: .9rem 4rem;
+  border: 2px solid black;
+  border-radius: .5rem;
+}
+.sign-in-input:focus{
+  border: 2px solid greenyellow;
+}
+.error-text{
+  font-size: 1.5rem;
+  color: red;
+  margin-bottom: .9rem;
+}
+.form-action{
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+}
+.forgot-password{
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  color: black;
+}
+.danbo-text{
+  margin-top: .9rem;
+  margin-left: 1.4rem;
+}
+.sidebar{
+  width: 20%;
+  background-color: #e6e6e6;
+  border-right: 1px solid black;
+  border-radius: .9rem;
+  padding: 3rem;
+  margin-right: 10rem;
+  box-shadow: 16px 13px 37px -1px rgba(0,0,0,0.48);
+}
+.current-admin p{
+  font-size: 1.3rem;
+  font-style: italic;
+  color: black;
+}
+.sidebar-btn{
+  display: block;
+  margin-bottom: 3rem;
+  padding: .9rem 3rem; 
+  background-color: #33ff77;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: 1px solid #808080;
+  transition: transform ease-in-out .4s;
+  font-size: 1.9rem;
+  font-weight: 700;
+  font-family: Cormorant sans-serif;
+}
+.sidebar-active{
+  background-color: #ff8080;
+}
+.sidebar-btn:hover{
+  background-color: #ff8080;
+  transform: scale(1.1);
+}
+.main-bowl{
+  border: .5px solid #808080;
+  padding: 5rem;
+  border-radius: 1rem;
+  background-color:  #f2f2f2;
+  box-shadow: 16px 13px 37px -1px rgba(0,0,0,0.48);
+  min-width: 70rem;
+  min-height: 45rem;
+}
+
+.main-bowl-header{
+  font-size: 4rem;
+  color: #4d4d4d;
+  width: 31rem;
+  margin: 0 auto 5rem auto;
+  text-decoration: underline;
+}
+.labels{
+  font-size: 1.9rem;
+  font-family: Cormorant sans-serif;
+  font-weight: 600;
+  margin-right: 1.4rem;
+}
+.signup-input{
+  padding: .5rem 1rem;
+  border: 1px solid #bfbfbf;
+  border-radius: .8rem;
+}
+.signup-input:focus{
+  border: 1px solid black;
+  outline: none;
+}
+.input-set{
+  margin-bottom: 3rem;
+}
+.signup-first-name{
+  margin-right: 5rem;
+}
+.signup-email{
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+.confirm-password{
+  margin-top: 3rem;
+}
+.signup-dept{
+  margin-right: 3rem;
+}
+.signup-error-text{
+  margin-top: 3rem;
+  font-size: 1.6rem;
+  color: red;
+  font-weight: 800;
+}
+.signup-btn{
+  margin: 2rem 0 0 70%;
+}
+table{
+  table-layout: fixed;
+  min-width: 90rem;
+}
+table th{
+  font-size: 3rem;
+  font-weight: 900;
+  /* margin-right: 12rem; */
+  text-align: left;
+  color: #4d4d4d;
+  padding: 2rem 2rem 0 0;
+  background-color:  #ccffcc;
+}
+table th:first-child{
+  padding: 2rem 2rem 0 0;
+}
+table tbody{
+  background-color: white;
+  border-radius: 2rem;
+}
+table td{
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: .7rem 2rem .7rem .7rem;
+  border-bottom: 1px solid #4d4d4d;
+  /* cursor: pointer; */
+}
+table td a:hover{
+  color: red;
+}
+table tr:hover{
+  background-color: greenyellow;
+  cursor: pointer;
+}
+.pagination{
+  margin: 3rem 6rem;
+}
+.btn-next, .load-more-memos{
+  width: 20rem;
+  margin-left: 37%;
+  /* margin: 0 auto; */
+}
+.memo-spinner{
+  width: 50rem;
+  margin-left: 35rem
+}
+.fa-spinner{
+  font-size: 10rem; 
+  font-weight: 900; 
+  color: #55c57a;
+  -webkit-animation: rotation 2.4s infinite linear;
+}
+.spinner-text{
+  font-size: 3rem;
+  font-weight: 400;
+}
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+.memo-dept{
+  margin-right: 7rem;
+  padding-right: 2rem;
+  border-radius: 2rem;
+  border-right: 2px solid #4d4d4d;
+}
+.memo-all{
+  font-size: 2rem;
+  margin-left: 1.4rem;
+}
+.memo-reciever-label{
+  font-size: 1.6rem;
+}
+.active-dept{
+  color: red;
+}
+.memo-dept li{
+  font-size: 1.6rem;
+}
+.memo-dept li a{
+  padding: .3rem 3rem 0 0;
+}
+.memo-reciever-header{
+  font-size: 1.6rem;
+}
+.cont-can{
+  margin: 2.6rem 3rem;
+}
+.btn-cancel-1{
+  margin-right: 45%;
+}
+.department-li{
+  text-decoration: underline;
+  color: red;
+  cursor: pointer;
+}
+.memo-top-from{
+  margin-right: 35rem;
+}
+.from{
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: red;
+}
+.memo-top-info{
+  font-size: 1.7rem;
+}
+.memo-subject{
+  margin-top: 2rem;
+}
+.memo-subject-input{
+    padding: .5rem 1rem;
+    border: 1px solid #bfbfbf;
+    border-radius: .8rem;
+    width: 65rem;
+    height: 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.memo-subject-input:focus{
+  border: 1px solid black;
+  outline: none;
+}
+.memo-date{
+  margin-top: 1rem;
+}
+.memo-content{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.paragraph{
+  border: 1px solid #bfbfbf;
+  border-radius: .8rem;
+  padding: 2rem;
+  font-size: 2rem;
+}
+.paragraph:focus{
+  border: 1px solid black;
+  outline: none;
+}
+.add-para{
+  font-size: 1.7rem;
+  margin-left: 72%;
+  margin-top: 2rem;
+}
+.add-para:hover{
+  color: red;
+}
+.btn-cancel-2{
+  margin-right: 64%;
+}
+.popup{
+  /* opacity: 0;
+  visibility: hidden; */
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: RGBA(0,0,0,0.5);
+  z-index: 5;
+}
+.modal{
+  width: 40%;
+  background-color: white;
+  /* height: 50rem; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3rem;
+  padding: 4rem;
+  border: 2px solid #bfbfbf;
+  box-shadow: 19px 8px 40px -25px rgba(13,1,13,0.82);
+}
+.memo-reciever-modal{
+  width: 50%;
+  /* background-color: red; */
+  margin: 0 auto;
+  font-size: 3rem;
+}
+.modal-succes{
+  width: 30%;
+}
+.modal-succes-close:link, :visited{
+  color: red;
+  position: absolute;
+  top: .5rem;
+  right: 2.5rem;
+  font-size: 4rem;
+  text-decoration-line: none;
+}
+.fa-check-circle{
+  color: #55c57a;
+  font-size: 8rem;
+  margin-left: 38%;
+  margin-top: 2rem;
+}
+.fa-exclamation-circle{
+  color: red;
+  font-size: 7rem;
+  width: 9rem;
+  margin-left: 40%;
+  margin-top: 2rem;
+
+}
+.btn-modal-back{
+  margin-right: 55%;
+}
+.memo-reciever-container{
+  margin: 1rem 1rem 1rem 1rem;
+  border-radius: 3px;
+}
+.memo-reciever-name{
+  font-size: 1.6rem;
+  color: #4d4d4d;
+}
+.memo-reciever-desg{
+  font-size: 1.2rem;
+  margin-bottom: .7rem;
+  text-decoration: underline;
+  color: red;
+}
+.btn-close{
+  margin-left: 40%;
+}
+textarea{
+  resize: none;
+}
+.user-profile{
+  font-size: 1.5rem;
+}
+.reset-password{
+  width: 25rem;
+  margin: 3rem 0 3rem 25%;
+  height: 3rem;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+.margin-auto{
+  /* margin: 0 auto; */
+  margin-left: 30%;
+}
+.container{
+  text-align: center;
+}
+.block{
+  display: block;
+}
+.float{
+  float: left;
+}
+.clearfix::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*# sourceMappingURL=style.css.map */
