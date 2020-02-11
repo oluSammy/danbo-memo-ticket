@@ -25,7 +25,7 @@ export const getDepartments = async ()=>{
 export const getAllUsers = async (depts)=>{
     const allUsers = [];
     depts.forEach(async (dept)=>{
-        const users = await db.collection('users').where('department', '==', dept).get()
+        const users = await db.collection('users').where('department', '==', dept).get()   
         let test = [];
         users.forEach(user=>{
             // test.push(`${user.data().name} ${user.data().surname} ${user.data().uid}`)
