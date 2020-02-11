@@ -47,7 +47,7 @@ h1 {
 }
 .btn{
   padding: 1rem 2.5rem;
-  background-color: #55c57a;
+  background-color: #3333ff;
   border-radius: 2rem;
   border: 2px solid black;
   cursor: pointer;
@@ -55,7 +55,7 @@ h1 {
   box-shadow: 3px 4px 23px -1px rgba(112,98,112,0.85);
 }
 .btn:hover{
-  background-color: #ff8080;
+  background-color: #b3b3ff;
   transform: scale(1.1);
 }
 .btn:active{
@@ -133,7 +133,7 @@ h1 {
   display: block;
   margin-bottom: 3rem;
   padding: .9rem 3rem; 
-  background-color: #33ff77;
+  background-color:#3333ff;
   border-radius: 1rem;
   cursor: pointer;
   border: 1px solid #808080;
@@ -143,10 +143,10 @@ h1 {
   font-family: Cormorant sans-serif;
 }
 .sidebar-active{
-  background-color: #ff8080;
+  background-color: #b3b3ff;
 }
 .sidebar-btn:hover{
-  background-color: #ff8080;
+  background-color: #b3b3ff;
   transform: scale(1.1);
 }
 .main-bowl{
@@ -217,7 +217,7 @@ table th{
   text-align: left;
   color: #4d4d4d;
   padding: 2rem 2rem 0 0;
-  background-color:  #ccffcc;
+  background-color:  #ccccff;
 }
 table th:first-child{
   padding: 2rem 2rem 0 0;
@@ -233,11 +233,8 @@ table td{
   border-bottom: 1px solid #4d4d4d;
   /* cursor: pointer; */
 }
-table td a:hover{
-  color: red;
-}
 table tr:hover{
-  background-color: greenyellow;
+  background-color: #4d4dff;
   cursor: pointer;
 }
 .pagination{
@@ -293,7 +290,8 @@ table tr:hover{
   padding: .3rem 3rem 0 0;
 }
 .memo-reciever-header{
-  font-size: 1.6rem;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 .cont-can{
   margin: 2.6rem 3rem;
@@ -351,14 +349,62 @@ table tr:hover{
   border: 1px solid black;
   outline: none;
 }
-.add-para{
+.attachment{
   font-size: 1.7rem;
-  margin-left: 72%;
+  font-style: inherit;
+  cursor: pointer;
+}
+.attachment-text{
+  font-size: 2rem;
+}
+.progress-container{
+  display: none;
+}
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+  width: 60rem;
+  height: 3rem;
   margin-top: 2rem;
 }
-.add-para:hover{
-  color: red;
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    -webkit-animation: animate-stripes 3s linear 1s infinite running slidein;;
+    animation: animate-stripes 3s linear 1s infinite running slidein;;
+}
+@-webkit-keyframes animate-stripes {
+  100% { background-position: -100px 0px; }
+}
+
+@keyframes animate-stripes {
+  100% { background-position: -100px 0px; }
+}
+.progress-value{
+  font-size: 2.4rem;
+  font-style: inherit;
+  margin-left: 1rem;
+  line-height: 1.7;
+}
+/* .progress, .progress-value{
+  opacity: 0;
+  visibility: hidden;
+} */
 .btn-cancel-2{
   margin-right: 64%;
 }

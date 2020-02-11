@@ -60,7 +60,7 @@ export const sentMemo = (arr)=>{
             <tr class="table-row">
                 <th>Date Sent</th>
                 <th>Subject</th>
-                <th>Recievers</th>
+                <th>Sender</th>
             </tr>
         </thead>
         <tbody class="table-body">
@@ -136,12 +136,26 @@ export const showReceivedMemo = (el)=>{
             <textarea class="paragraph block content" name="paragraph" id="paragraph-1" cols="70" rows="10" readonly>${el.content}</textarea>
         </div>
     </div>            
-    <a class="add-para" href="" style="display: none"><span><i class="fas fa-plus-square"></i></span>Add Paragraph</a>
+    <div class="clearfix">
+
+            <div class="float">
+                <label for="memo-subject-text " class="memo-subject-label from">ATTACHMENT:</label>
+                ${el.attachmentUrl  ?
+                `<span>${el.attachmentTitle}, ${bytesToSize(el.attachmentSize)}</span> <a href="${el.attachmentUrl}">Download</a>` : 
+                `<span class="attachment-text">NONE</span>`}  
+                
+                
+            </div>
+        </div>
+    
     `;
     document.querySelector('.read-memo').insertAdjacentHTML('afterbegin', html);
     document.querySelector('.memo-subj').value = el.subject;
 };
-
+// ${el.attachmentURL != null ?
+//     `<span>${el.attachmentTitle}, ${bytesToSize(el.attachmentSize)}</span> <a href="${el.attachmentURL}">Download</a>` : 
+//     `<span class="attachment-text">NONE</span>`}  
+//<span>${el.attachmentTitle}, ${bytesToSize(el.attachmentSize)}</span> <a href="${el.attachmentUrl}" target="_blank">Download</a>
 export const showSentMemo = (el,arr)=>{
     document.querySelector('.read-memo').innerHTML = '';
     let html = `
@@ -187,7 +201,13 @@ export const showSentMemo = (el,arr)=>{
             <textarea class="paragraph block content" name="paragraph" id="paragraph-1" cols="70" rows="10" readonly>${el.content}</textarea>
         </div>
     </div>            
-    <a class="add-para" href="" style="display: none"><span><i class="fas fa-plus-square"></i></span>Add Paragraph</a>
+    
+    <div class="float">
+                <label for="memo-subject-text " class="memo-subject-label from">ATTACHMENT:</label>
+                ${el.attachmentUrl  ?
+                `<span>${el.attachmentTitle}, ${bytesToSize(el.attachmentSize)}</span> <a href="${el.attachmentUrl}">Download</a>` : 
+                `<span class="attachment-text">NONE</span>`}              
+    </div>
     `;
     document.querySelector('.read-memo').insertAdjacentHTML('afterbegin', html);
     document.querySelector('.memo-subj').value = el.subject;
@@ -224,3 +244,10 @@ const receiversString = (memoReceivers)=>{
         }
     return string;
 };
+
+function bytesToSize(bytes) {
+    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes == 0) return '0 Byte';
+    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+ };

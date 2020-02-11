@@ -50,8 +50,27 @@ export const getReceivedMemo = ()=>{
             let date = new Date((doc.data().date.seconds)*1000);
             let newDate = formatDate(date);
 
-            allMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id})
-            state.AllReceivedMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id})
+            allMemo.push({
+                date: newDate, 
+                subject: doc.data().subject, 
+                content: doc.data().content, 
+                sender: doc.data().sender, 
+                id: doc.id, 
+                attachmentTitle: doc.data().attachmentTitle, 
+                attachmentUrl: doc.data().attachmentURL,
+                attachmentSize: doc.data().attachmentSize
+                });
+
+            state.AllReceivedMemo.push({
+                date: newDate, 
+                subject: doc.data().subject, 
+                content: doc.data().content, 
+                sender: doc.data().sender, 
+                id: doc.id,
+                attachmentTitle: doc.data().attachmentTitle, 
+                attachmentUrl: doc.data().attachmentURL,
+                attachmentSize: doc.data().attachmentSize
+                });
         })
     }).then(rep=>{
         toggleSideBarClass();
@@ -73,8 +92,26 @@ export const getNewReceivedMemo = ()=>{
                 let date = new Date((doc.data().date.seconds)*1000);
                 let newDate = formatDate(date);
     
-                newMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id})
-                state.AllReceivedMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id})
+                newMemo.push({
+                    date: newDate, 
+                    subject: doc.data().subject, 
+                    content: doc.data().content, 
+                    sender: doc.data().sender, 
+                    id: doc.id,
+                    attachmentTitle: doc.data().attachmentTitle, 
+                    attachmentUrl: doc.data().attachmentURL,
+                    attachmentSize: doc.data().attachmentSize
+                    });
+                state.AllReceivedMemo.push({
+                    date: newDate, 
+                    subject: doc.data().subject, 
+                    content: doc.data().content, 
+                    sender: doc.data().sender, 
+                    id: doc.id,
+                    attachmentTitle: doc.data().attachmentTitle, 
+                    attachmentUrl: doc.data().attachmentURL,
+                    attachmentSize: doc.data().attachmentSize
+                    });
             })
         }).then(rep=>{
                 state.lastVisible = all[all.length -1];
@@ -97,8 +134,27 @@ export const getSentMEmo = ()=>{
             let date = new Date((doc.data().date.seconds)*1000);
             let newDate = formatDate(date);
 
-            allMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id, receiversId: doc.data().receivers})
-            state.allSentMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id, receiversId: doc.data().receivers})
+            allMemo.push({date: newDate, 
+                subject: doc.data().subject, 
+                content: doc.data().content, 
+                sender: doc.data().sender, 
+                id: doc.id, 
+                receiversId: doc.data().receivers,
+                attachmentTitle: doc.data().attachmentTitle, 
+                attachmentUrl: doc.data().attachmentURL,
+                attachmentSize: doc.data().attachmentSize
+            });
+            state.allSentMemo.push({
+                date: newDate, 
+                subject: doc.data().subject, 
+                content: doc.data().content, 
+                sender: doc.data().sender, 
+                id: doc.id, 
+                receiversId: doc.data().receivers,
+                attachmentTitle: doc.data().attachmentTitle, 
+                attachmentUrl: doc.data().attachmentURL,
+                attachmentSize: doc.data().attachmentSize
+            })
         })
     }).then(rep=>{
         state.allUsers = [];
@@ -127,8 +183,29 @@ export const getNewSentMEmo = ()=>{
                 let date = new Date((doc.data().date.seconds)*1000);
                 let newDate = formatDate(date);
     
-                allMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id, receiversId: doc.data().receivers})
-                state.allSentMemo.push({date: newDate, subject: doc.data().subject, content: doc.data().content, sender: doc.data().sender, id: doc.id, receiversId: doc.data().receivers})
+                allMemo.push({
+                    date: newDate, 
+                    subject: doc.data().subject, 
+                    content: doc.data().content, 
+                    sender: doc.data().sender, 
+                    id: doc.id, receiversId: 
+                    doc.data().receivers,
+                    attachmentTitle: doc.data().attachmentTitle, 
+                    attachmentUrl: doc.data().attachmentURL,
+                    attachmentSize: doc.data().attachmentSize
+                });
+
+                state.allSentMemo.push({
+                    date: newDate, 
+                    subject: doc.data().subject, 
+                    content: doc.data().content, 
+                    sender: doc.data().sender, 
+                    id: doc.id, 
+                    receiversId: doc.data().receivers,
+                    attachmentTitle: doc.data().attachmentTitle, 
+                    attachmentUrl: doc.data().attachmentURL,
+                    attachmentSize: doc.data().attachmentSize
+                });
             })
         }).then(rep=>{
             db.collection('users').get().then(snapshot=>{

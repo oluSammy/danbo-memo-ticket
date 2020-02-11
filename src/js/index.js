@@ -1,4 +1,4 @@
-import {auth, db, functions} from './models/firebaseConfig';
+import {auth, db, functions, storage} from './models/firebaseConfig';
 import * as adminView from './views/adminView';
 import * as userView from './views/userView';
 import * as signInView from './views/signinView';
@@ -379,25 +379,83 @@ const sendMemo = ()=>{
             const receiversNameAndDesig = createReceiversDisplayNAme(state.memoReceivers);
             let subject = document.querySelector('.memo-subject-input');
             let content = document.querySelector('.content');
+            let file = document.querySelector('.attachment').files[0];
+            let fileDownloadURL;
 
             if(subject.value && content.value){
 
-                db.collection('memos').add({
-                    senderId: state.uid,
-                    sender: state.displayName,
-                    date: firebase.firestore.Timestamp.fromDate(new Date(today())),
-                    subject: subject.value,
-                    content: content.value,
-                    receivers: receiversArray,
-                    receiversDetails: receiversNameAndDesig
-                }).then(rep=>{
-                    subject.value = '';
-                    content.value = '';
-                    createNewMemo.getReceivedMemo();
-                    adminView.signUpSuccess('Memo Sent!');
-                    // clearMainBowl();
-                    
-                })
+                if(file){
+                    let memoRef = storage.child('memo');
+                    let fileRef = memoRef.child(file.name);
+                    let uploadTask = fileRef.put(file);
+
+                    uploadTask.on('state_changed',
+                    (snapshot)=>{
+                    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                    let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    document.querySelector('.progress-container').style.display = 'block';
+
+                    console.log('Upload is ' + progress + '% done');
+                    document.querySelector('.progress').value = progress;
+                    document.querySelector('.progress-value').innerHTML = `${Math.floor(progress)} %`;
+                    },
+                    (error)=>{
+                    // catch errors
+                    console.log(error);
+
+                    },
+                    ()=>{
+                    // Upload completed successfully, now we can get the download URL
+                    fileRef.getDownloadURL().then(function(downloadURL) {
+                        fileDownloadURL = downloadURL;
+                        console.log('File available at', fileDownloadURL);
+                        db.collection('memos').add({
+                            senderId: state.uid,
+                            sender: state.displayName,
+                            date: firebase.firestore.Timestamp.fromDate(new Date(today())),
+                            subject: subject.value,
+                            content: content.value,
+                            receivers: receiversArray,
+                            receiversDetails: receiversNameAndDesig,
+                            attachmentURL: fileDownloadURL,
+                            attachmentTitle: file.name,
+                            attachmentSize: file.size
+                        }).then(rep=>{
+                            subject.value = '';
+                            content.value = '';
+                            createNewMemo.getReceivedMemo();
+                            adminView.signUpSuccess('Memo Sent!');
+                            console.log(file)
+                            // clearMainBowl();
+                            
+                        })
+                      });
+                    }
+                    )
+                }else{
+                    db.collection('memos').add({
+                        senderId: state.uid,
+                        sender: state.displayName,
+                        senderDesignation: state.userDesignation,
+                        date: firebase.firestore.Timestamp.fromDate(new Date(today())),
+                        subject: subject.value,
+                        content: content.value,
+                        receivers: receiversArray,
+                        receiversDetails: receiversNameAndDesig,
+                        attachmentURL: null,
+                        attachmentTitle: null,
+                        attachmentSize: null
+                    }).then(rep=>{
+                        subject.value = '';
+                        content.value = '';
+                        createNewMemo.getReceivedMemo();
+                        adminView.signUpSuccess('Memo Sent!');
+                        console.log(file)
+                        // clearMainBowl();
+                        
+                    })
+
+                }
             }else{
                 alert('write memo subject and content');
             }

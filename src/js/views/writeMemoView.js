@@ -43,8 +43,19 @@ export const writePage = (state, today)=>{
             <div class="paragraphs float">
                 <textarea class="paragraph block content" name="paragraph" id="paragraph-1" cols="70" rows="10" placeholder="Content"></textarea>
             </div>
-        </div>            
-        <a class="add-para" href="" style="display: none"><span><i class="fas fa-plus-square"></i></span>Add Paragraph</a>
+        </div>    
+        <div class="clearfix">   
+                <div class="memo-attachment float">
+                    <div class="date-label from">Attachment:</div>
+                </div>         
+                <div class="memo-date float">
+                    <input class = "attachment" type="file" name = "attachment">
+                </div>
+        </div>
+        <div class="progress-container"> 
+            <progress class= "progress" max="100" value="0"></progress> <span class = "progress-value"></span>
+        </div>
+        
         <div class="cont-can">
             <button class="btn btn-cancel-2" type="submit">Cancel</button>
             <button class="btn btn-create" type="submit">Send Memo</button>
